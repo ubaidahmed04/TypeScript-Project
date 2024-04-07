@@ -1,6 +1,6 @@
 import inquirer from "inquirer";
-let myBalance = 1000;
-let pinCode = 1234;
+let myBalance = 10000;
+const pinCode = 1234;
 let checkPinCode = await inquirer.prompt([
     {
         name: "pinCode",
@@ -8,36 +8,65 @@ let checkPinCode = await inquirer.prompt([
         type: "number"
     }
 ]);
-if (pinCode === checkPinCode.pinCode) {
-    let dropDown = await inquirer.prompt([
+if (pinCode == checkPinCode.pinCode) {
+    let checkAccount = await inquirer.prompt([
         {
-            name: "pinCode",
-            message: "What do you want too ?",
+            name: "currAccount",
+            message: "Select An Account type (using arrow key)",
             type: "list",
-            choices: ["withDraw", "check balance"]
+            choices: ["Current Account", "Saving Account"]
         }
     ]);
-    if (dropDown.pinCode === "withDraw") {
-        let amountWithDraw = await inquirer.prompt([
+    if (checkAccount.currAccount === "Current Account" || "Saving Account") {
+        let tranMethod = await inquirer.prompt([
             {
-                name: "amount",
-                message: "how many ammount do you want to with draw ?",
-                type: "number",
+                name: "withDrawMethod",
+                message: "What do you want too ?",
+                type: "list",
+                choices: ["Cash Withdrawal", "Fast Cash"]
             }
         ]);
-        if (myBalance < amountWithDraw.amount) {
-            console.log("insufficient balance");
+        if (tranMethod.withDrawMethod === "Cash Withdrawal") {
+            let cashWithdraw = await inquirer.prompt([
+                {
+                    name: "withDrawAmmount",
+                    message: "How many ammount do you want too Withdrawal ?",
+                    type: "number",
+                }
+            ]);
+            myBalance -= cashWithdraw.withDrawAmmount;
+            if (cashWithdraw.withDrawAmmount > myBalance) {
+                console.log('Insufficient Balance');
+            }
+            else if (myBalance >= cashWithdraw.withDrawAmmount) {
+                console.log("Congrats to successfully withdrawal");
+                console.log(`Your Current Balance is : ${myBalance}`);
+            }
+            else if (isNaN(cashWithdraw)) {
+                console.log("Please Enter your Ammount do you want to withdrawal");
+            }
+            // else{
+            // // console.log(`Your Current Balance is : ${myBalance}`)
+            // }
         }
-        myBalance -= amountWithDraw.amount;
-        if (myBalance >= amountWithDraw.amount) {
-            console.log("congrats to successfully withDraw");
-            console.log(`your update balance is ${myBalance}`);
+        if (tranMethod.withDrawMethod === "Fast Cash") {
+            let fastingWithdraw = await inquirer.prompt([
+                {
+                    name: "rapidCash",
+                    message: "what ammount do you want to withdrawal (using arrow key)",
+                    type: "list",
+                    choices: ["1000", "2000", "3000", "4000", "5000"]
+                }
+            ]);
+            console.log(fastingWithdraw.rapidCash);
+            if (myBalance >= fastingWithdraw.rapidCash) {
+                myBalance -= fastingWithdraw.rapidCash;
+                console.log("Congrats to successfully withdrawal");
+                console.log("your update balance is :", myBalance);
+            }
         }
-    }
-    else if (dropDown.pinCode === "check balance") {
-        console.log(`Your Current Balance is : ${myBalance}`);
     }
 }
 else {
-    console.log("incorrect pin code");
+    console.log("incorrect pin code \n please try again");
 }
