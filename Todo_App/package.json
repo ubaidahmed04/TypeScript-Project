@@ -10,10 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^9.2.17"
+    "inquirer": "^9.2.17",
+    "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
-    "@types/inquirer": "^9.0.7"
+    "@types/inquirer": "^9.0.7",
+    "@types/prompt-sync": "^4.2.3"
   },
   "keywords": [],
   "description": ""
