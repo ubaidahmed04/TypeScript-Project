@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 
 let myBalance:number = 10000;
@@ -65,7 +66,7 @@ let checkPinCode =await inquirer.prompt(
                     name:"rapidCash",
                     message:"what ammount do you want to withdrawal (using arrow key)",
                     type:"list",
-                    choices:["1000","2000","3000","4000","5000"]
+                    choices:["1000","3000","5000","7000"]
                 }
             ])
             console.log(fastingWithdraw.rapidCash)
