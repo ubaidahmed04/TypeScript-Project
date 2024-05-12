@@ -122,3 +122,11 @@ let textShow = "";
 //     // ${number}
 //     // `
 // }
+// class work 
+let check = 1234;
+// console.log(check)
+function student(...id) {
+    let num = 10;
+    console.log(num);
+}
+student(102);

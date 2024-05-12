@@ -1,4 +1,4 @@
-import inquirer from "inquirer";
+//import inquirer from "inquirer";
 // import { inquirer } from 'inquirer';
 // async function main() {
 // let guestNum= await inquirer.prompt([{
@@ -25,3 +25,5 @@ import inquirer from "inquirer";
 
 // let personName: string = "Eric";
 // console.log(`Hello ${personName}, would you like to learn some Python today?`);
+var name:string = " ubaid ahmed";
+console.log(`hello ${name} would you like to learn some typesript today`);

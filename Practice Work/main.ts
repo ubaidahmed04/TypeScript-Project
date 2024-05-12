@@ -152,3 +152,16 @@ let textShow = ""
 //     // ${number}
 //     // `
 // }
+
+
+
+// class work 
+
+let check:number = 1234;
+// console.log(check)
+
+function student(...id:number[]){
+    let num:number =10;
+    console.log(num)
+}
+student(102)
