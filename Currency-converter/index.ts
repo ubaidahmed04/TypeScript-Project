@@ -8,7 +8,7 @@ const currency :any={
  PKR : 100,
  Euro : 150,
  Ind : 20,
- Riyal:70
+//  Riyal:70
 }
 let firstInput = await inquirer.prompt(
     [
@@ -16,7 +16,7 @@ let firstInput = await inquirer.prompt(
             name:"from",
             message:"Select your currency ",
             type:"list",
-            choices:['USD','Ind','PKR','Euro','Riyal']
+            choices:['USD','Ind','PKR','Euro',]
 
         }
     ]
@@ -27,7 +27,7 @@ let secondInput = await inquirer.prompt(
             name:"to",
             message:"Select currency do you want to change this",
             type:"list",
-            choices:['USD','Ind','PKR','Euro','Riyal']
+            choices:['USD','Ind','PKR','Euro']
 
         }
     ]

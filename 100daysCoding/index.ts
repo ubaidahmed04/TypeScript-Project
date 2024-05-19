@@ -110,3 +110,7 @@
 
 
 console.log("check")
+function myArr (arr){
+    console.log("my_name")
+}
+myArr("name")
