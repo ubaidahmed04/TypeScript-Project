@@ -109,8 +109,61 @@
 // }
 
 
-console.log("check")
-function myArr (arr){
-    console.log("my_name")
+// again play 1 to 20
+
+let obj ={
+    name:"ubaid",
+    id:123,
+    
 }
-myArr("name")
+// console.log(obj)
+
+// tuple && tuple is also a pass by value
+
+let tuple : [number,string,boolean,]
+
+tuple =[5,"ubaid",true]
+// console.log(tuple)
+ 
+// object with type decleare
+
+let myObj : {name:string,id:number,student:true} = {
+    name:"ubaid",
+    id:12345,
+    student:true
+}
+// console.log(myObj)
+
+// genric type
+
+let myArr:Array<string> = ["ubaid","faiq"] 
+let newArr = myArr  // past by refence
+newArr.push("sameer")
+// console.log(newArr)
+
+let studentArr:[string,number] = ["ubaid",2] // multiple type defined 
+
+// pass  by value means myNum me value ki 2 rahe gi value same nh rhe gi
+let myNum = 2
+let anotherNum = myNum; //assign again myNum value but another memory address
+anotherNum = 6 // pass by value number string undefined boolean null BigInt symbol or pass by refrence ki data type object
+// console.log(anotherNum) 
+
+// console.log(myNum) 
+
+let student :string[]=["ubaid","faiq"]
+let anotherStudent :string[] = student;
+anotherStudent[0]="changeName";
+// console.log(anotherStudent) // same value in both console because array primative datatype nh he its means is pass by refrence howa he 
+// console.log(student) // same value 
+
+
+let Students :number[] = [1,2,4,5]
+let anotherStudents :number[] =[...Students];// yaha humne spreadOperator use kya he pass by refrence ko pass by value krne ke lye 
+// new features javascript ES6 rest or spread operator
+anotherStudents[0] = 3
+console.log(Students)
+console.log(anotherStudents)
+
+
+// key value pair me object hota he 
